@@ -197,27 +197,100 @@
       // Initialize and add the map
       let map;
       
-      async function initMap() {
-        // The location of Thoth
-        const position = { lat: 40.751310828641685, lng: -73.97318936096895 };
+      // async function initMap() {
+      //   // The location of Thoth
+      //   const position = { lat: 40.751310828641685, lng: -73.97318936096895 };
        
-        const { Map } = await google.maps.importLibrary("maps");
-        const { AdvancedMarkerElement } = await google.maps.importLibrary("marker");
+      //   const { Map } = await google.maps.importLibrary("maps");
+      //   const { AdvancedMarkerElement } = await google.maps.importLibrary("marker");
         
-        // The map, centered at Uluru
-        map = new Map(document.getElementById("map"), {
-          zoom: 18,
-          center: position,
-          mapId: "DEMO_MAP_ID",
-        });
-        
-        // The marker, positioned at Uluru
-        const marker = new AdvancedMarkerElement({
-          map: map,
-          position: position,
-          title: "Thoth Global Network Solution",
-        });
-      }
+      //   // The map, centered at Uluru
+      //   map = new Map(document.getElementById("map"), {
+      //     zoom: 18,
+      //     center: position,
+      //     mapId: "DEMO_MAP_ID",
+      //   });
+      //   setMarkers(map);
+      //   // The marker, positioned at Uluru
+      //   // const marker = new AdvancedMarkerElement({
+      //   //   map: map,
+      //   //   position: position,
+      //   //   title: "Thoth Global Network Solution",
+      //   // });
+      // }
+      async function initMap() {
+  // Request needed libraries.
+  const { Map } = await google.maps.importLibrary("maps");
+  const { AdvancedMarkerElement } = await google.maps.importLibrary("marker");
+  //const center = { lat: 29.69302899638542, lng: -9.484570720036796 };
+  const center = { lat: 18.553662885768304, lng: 73.94932465286303 };
+  const map = new Map(document.getElementById("map"), {
+    zoom: 18,
+    center: center,
+    mapId: "4504f8b37365c3d0",
+  });
+
+  for (const property of properties) {
+    const AdvancedMarkerElement = new google.maps.marker.AdvancedMarkerElement({
+      map,
+      content: buildContent(property),
+      position: property.position,
+      title: property.description,
+    });
+
+    AdvancedMarkerElement.addListener("click", () => {
+      toggleHighlight(AdvancedMarkerElement, property);
+    });
+  }
+}
+
+function toggleHighlight(markerView, property) {
+  if (markerView.content.classList.contains("highlight")) {
+    markerView.content.classList.remove("highlight");
+    markerView.zIndex = null;
+  } else {
+    markerView.content.classList.add("highlight");
+    markerView.zIndex = 1;
+  }
+}
+
+function buildContent(property) {
+  const content = document.createElement("div");
+
+  content.classList.add("property");
+  content.innerHTML = `
+    <div class="icon">
+        <i aria-hidden="true" class="bi bi-geo-alt-fill text-danger" title="${property.type}"></i>
+    </div>
+    <div class="details">
+        <div class="price">${property.title}</div>
+        <div class="address">${property.address}</div>
+    </div>
+    `;
+  return content;
+}
+
+const properties = [
+  {
+    address: "211 East 43rd Street, 7th Floor,205 New York (NY) 10017 United States",
+    title: "Thoth global network Solution (US HQ)",
+    size: 300,
+    position: {
+      lat:40.751310828641685, lng: -73.97318936096895
+    },
+  },
+  {
+    address: "417 - 4th Floor, Global Business Hub, Near WTC Kharadi, Pune (MH) 411014 INDIA",
+    title: "Thoth global network Solution (IND HQ)",
+    size: 300,
+    position: {
+      //lat:18.55379, lng: 73.94947
+      lat:18.553662885768304, lng:73.94932465286303
+    },
+  }
+];
+
+      
       
       initMap();
       </script>
