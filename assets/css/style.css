@@ -20,7 +20,7 @@
     /* --secondary-color: #90ee90; */
     
     /* Sunset Palette */
-    --primary-color: #ff7f50;
+    --primary-color: #ff7f50b8;
     --accent-color: #ffd700;
     --secondary-color: #12bb12;
     ;
@@ -47,6 +47,9 @@
   nav,footer {
     background-color: var(--primary-color);
     color: var(--text-color);
+  }
+  img.logo{
+    width: 5vw; aspect-ratio: 1/1;
   }
   
   /* Example usage of variables */
