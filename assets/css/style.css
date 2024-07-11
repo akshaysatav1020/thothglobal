@@ -20,7 +20,7 @@
     /* --secondary-color: #90ee90; */
     
     /* Sunset Palette */
-    --primary-color: #ff7f50b8;
+    --primary-color: #fbfcf8;
     --accent-color: #ffd700;
     --secondary-color: #12bb12;
     ;
@@ -36,7 +36,7 @@
     /* --secondary-color: #00bfff; */
     
     /* Text Color */
-    --text-color: #fff;
+    --text-color: #343a40;
   }
 
   *{
@@ -55,10 +55,14 @@
   /* Example usage of variables */
   .button {
     background-color: var(--secondary-color);
-    color: var(--text-color);
+    color:var(--primary-color);
+    font-weight: 600;
+
+
+
   }
   i.bi{
-    color:#fff; 
+    color:#343a40; 
   }
     
   i.bi-list{
@@ -67,6 +71,7 @@
   
   a, .nav-item>a.nav-link, a.nav-link {
     color: var(--text-color);
+    font-weight: 600;
   }
   
   /* Additional elements can use secondary color */
