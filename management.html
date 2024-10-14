@@ -32,6 +32,8 @@
     integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
   <link rel="stylesheet" href="./assets/css/style.css">
+  <link rel="stylesheet" href="./assets/css/animate.css">
+
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
     crossorigin="anonymous"></script>
@@ -46,27 +48,123 @@
         <i class="bi bi-list"></i>
       </button>
       <a class="navbar-brand" href="./"><img src="assets/images/logo.svg" alt="logo" class="img-fluid logo"></a>
+
       <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
             <a class="nav-link active" aria-current="page" href="./">Home</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="./about.html">About Us</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="./ourteam.html">Our Team</a>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" role="button" id="aboutDropdown" data-bs-toggle="dropdown"
+              href="#">About Us</a>
+            <div class="container dropdown-menu p-4" style="min-width: 30rem;" aria-labelledby="aboutDropdown">
+              <div class="row">
+                <div class="col border-end border-end-dark border-2">
+                  <dt>
+                  <dd><a href="./about.html#over-view" class="nav-link">Company Overview</a></dd>
+                  <dd><a href="./about.html#over-view" class="nav-link">Mission &amp; Vision</a></dd>
+                  <dd><a href="./about.html#core-values" class="nav-link">Core Values</a></dd>
+                  <dd><a href="./journey.html" class="nav-link">Our Journey</a></dd>
+                  <dd><a href="./ourteam.html" class="nav-link">Our Team</a></dd>
+                  <dd><a href="./careers.html" class="nav-link">Careers</a></dd>
+                  <dd><a href="./testimonials.html" class="nav-link">Testimonials</a></dd>
+                  </dt>
+                </div>
+                <div class="col p-4" style="align-content: center;background-color: #fbfcf8;">
+                  <img src="./assets/images/aboutus.jpg" class="img-fluid" style="aspect-ratio: 1/1;" alt="">
+                </div>
+              </div>
+            </div>
           </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" id="serviceDropdown" role="button" data-bs-toggle="dropdown"
               aria-expanded="false" href="#">Services</a>
-            <ul class="dropdown-menu" aria-labelledby="serviceDropdown">
-              <li><a class="dropdown-item" href="./ourservices.html#digital-marketting">Digital Marketing</a></li>
-              <li><a class="dropdown-item" href="./ourservices.html#travel-tourism">Travel &amp; Tourism</a></li>
-              <li><a class="dropdown-item" href="./ourservices.html#hospitality">Hospitality</a></li>
-              <li><a class="dropdown-item" href="./ourservices.html#healthcare">Healthcare</a></li>
-              <li><a class="dropdown-item" href="./ourservices.html#management">Management</a></li>
-            </ul>
+            <div class="container dropdown-menu p-4" style="min-width: 65rem;" aria-labelledby="aboutDropdown">
+              <div class="row">
+                <div class="col">
+                  <dt><a href="./consulting.html" class="nav-link"><strong>Consulting</strong></a></dt>
+                  <dd><a href="./consulting.html#business" class="nav-link">Strategy Development</a></dd>
+                  <dd><a href="./consulting.html#business" class="nav-link">Market Research</a></dd>
+                  <dd><a href="./consulting.html#business" class="nav-link">Business Transformation</a></dd>
+                  <dt><a href="./consulting.html#it" class="nav-link">IT Consulting</a></dt>
+                  <dd><a href="./consulting.html#it" class="nav-link">IT Strategy</a></dd>
+                  <dd><a href="./consulting.html#it" class="nav-link">Technology Assessment</a></dd>
+                  <dd><a href="./consulting.html#it" class="nav-link">Digital Transformation</a></dd>
+                  <dt><a href="./consulting.html#management" class="nav-link">Management Consulting</a></dt>
+                  <dd><a href="./consulting.html#management" class="nav-link">Process Improvement</a></dd>
+                  <dd><a href="./consulting.html#management" class="nav-link">Organizational Change</a></dd>
+                  <dd><a href="./consulting.html#management" class="nav-link">Performance Management</a></dd>
+                </div>
+                <div class="col">
+                  <dt><a href="./ites.html" class="nav-link"><strong>IT Enabled Services</strong></a></dt>
+                  <dd><a href="./ites.html#support" class="nav-link">Technical Support</a></dd>
+                  <dd><a href="./ites.html#support" class="nav-link">System Monitoring</a></dd>
+                  <dd><a href="./ites.html#support" class="nav-link">Network Management</a></dd>
+                  <dt><a href="./ites.html#development" class="nav-link">Software Development</a></dt>
+                  <dd><a href="./ites.html#development" class="nav-link">Custom Software Solutions</a></dd>
+                  <dd><a href="./ites.html#development" class="nav-link">Application Development</a></dd>
+                  <dd><a href="./ites.html#development" class="nav-link">System Integration</a></dd>
+                  <dt><a href="./ites.html#data" class="nav-link">Data Management</a></dt>
+                  <dd><a href="./ites.html#data" class="nav-link">Data Analytics</a></dd>
+                  <dd><a href="./ites.html#data" class="nav-link">Data Migration</a></dd>
+                  <dd><a href="./ites.html#data" class="nav-link">Database Management</a></dd>
+                </div>
+                <div class="col">
+                  <dt><a href="./outsourcing.html" class="nav-link"><strong>Outsourcing</strong></a></dt>
+                  <dd><a href="./outsourcing.html#financial" class="nav-link">Financial Outsourcing</a></dd>
+                  <dd><a href="./outsourcing.html#financial" class="nav-link">Accounting Services</a></dd>
+                  <dd><a href="./outsourcing.html#financial" class="nav-link">Financial Reporting</a></dd>
+                  <dd><a href="./outsourcing.html#financial" class="nav-link">Payroll Processing</a></dd>
+                  <dt><a href="./outsourcing.html#it" class="nav-link">IT Outsourcing</a></dt>
+                  <dd><a href="./outsourcing.html#it" class="nav-link">Help Desk Services</a></dd>
+                  <dd><a href="./outsourcing.html#it" class="nav-link">Infrastructure Management</a></dd>
+                  <dd><a href="./outsourcing.html#it" class="nav-link">Software Support</a></dd>
+                  <dt><a href="./outsourcing.html#banking" class="nav-link">Banking Outsourcing</a></dt>
+                  <dd><a href="./outsourcing.html#banking" class="nav-link">Loan Processing</a></dd>
+                  <dd><a href="./outsourcing.html#banking" class="nav-link">Compliance Services</a></dd>
+                  <dd><a href="./outsourcing.html#banking" class="nav-link">Risk Management</a></dd>
+                </div>
+                <div class="col">
+                  <dt><a href="./outsourcing.html#travel" class="nav-link"><strong>Tavel Outsourcing</strong></a></dt>
+                  <dd><a href="./outsourcing.html#travel" class="nav-link">Travel Booking Services</a></dd>
+                  <dd><a href="./outsourcing.html#travel" class="nav-link">Travel Management Solutions</a></dd>
+                  <dd><a href="./outsourcing.html#travel" class="nav-link">Expense Management</a></dd>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li class="nav-item dropdown"><a href="" class="nav-link dropdown-toggle" role="button"
+              data-bs-toggle="dropdown" aria-expanded="false" id="resourceDropdown">Resources</a>
+            <div class="container dropdown-menu p-4" style="min-width: 30rem;" aria-labelledby="resourceDropdown">
+              <div class="row">
+                <div class="col border-end border-end-dark border-2">
+                  <dt>
+                  <dd><a href="./faq.html" class="nav-link">FAQ's</a></dd>
+                  </dt>
+                </div>
+                <div class="col p-4" style="align-content: center;background-color: #fbfcf8;">
+                  <img src="./assets/images/faqs.jpeg" class="img-fluid" style="aspect-ratio: 1/1;" alt="">
+                </div>
+              </div>
+            </div>
+          </li>
+          <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" id="legalDropdown" role="button"
+              data-bs-toggle="dropdown" aria-expanded="false" href="#">Legal</a>
+            <div class="container dropdown-menu p-4" style="min-width: 30rem;" aria-labelledby="legalDropdown">
+              <div class="row">
+                <div class="col border-end border-end-dark border-2">
+                  <dt>
+                  <dd><a href="./privacy.html" class="nav-link">Privacy Policy</a></dd>
+                  <dd><a href="./terms.html" class="nav-link">Terms of Service</a></dd>
+                  <dd><a href="./refund.html" class="nav-link">Refund Policy</a></dd>
+                  <dd><a href="./cookiepolicy.html" class="nav-link">Cookie Policy</a></dd>
+                  </dt>
+                </div>
+                <div class="col p-4" style="align-content: center;background-color: #fbfcf8;">
+                  <img src="./assets/images/privacypolicy.jpg" class="img-fluid" style="aspect-ratio: 1/1;" alt="">
+                </div>
+              </div>
+            </div>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="./contact.html">Contact Us</a>
@@ -79,72 +177,261 @@
     </div>
   </nav>
   <main>
+    <style>
+      .service-banner {
+        background-position: center top;
+        background-repeat: no-repeat;
+        background-size: cover;
+        aspect-ratio: 5/1;
+      }
+
+      .service-banner::before {
+        position: absolute;
+        width: 100%;
+        aspect-ratio: 5/1;
+        background-color: #0000002e;
+        content: '';
+      }
+
+      .breadcrumb-item>a,
+      .breadcrumb-item.active {
+        color: #fff;
+        text-decoration: none;
+      }
+
+      .breadcrumb-item+.breadcrumb-item::before {
+        float: left;
+        padding-right: .5rem;
+        color: #fff;
+        content: var(--bs-breadcrumb-divider, "/");
+      }
+    </style>
     <div class="container-fluid">
+      <div class="row service-banner bg-magenta">
+        <div class="col pg-title">
+          <h1>Outsourcing</h1>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima mollitia modi, voluptas, quibusdam
+            voluptatem tempora quo quas obcaecati nobis ad assumenda tenetur. Ratione laudantium deserunt deleniti
+            eveniet natus qui ea?</p>
+          <nav aria-label="breadcrumb text-center">
+            <ol class="breadcrumb" style="justify-content: center;background-color: #b1005e;">
+              <li class="breadcrumb-item"><a href="#">Home</a></li>
+              <li class="breadcrumb-item"><a href="#">Service</a></li>
+              <li class="breadcrumb-item active" aria-current="page">Outsourcing</li>
+            </ol>
+          </nav>
+        </div>
+      </div>
+    </div>
+    <div class="container">
       <div class="row m-4 p-4">
-        <div class="col text-center">
-          <h2>Under Construction</h2>
-          <h2><i class="bi bi-gear-fill text-dark"></i></h2>
+        <div class="col">
+          <p>The success of Thoth Global Network Solutions is driven by our exceptional team of professionals.
+            While we value every member of our organization, here are a few key individuals who help steer
+            our company towards excellence</p>
+        </div>
+      </div>
+      <section id="service-details" class="service-details section">
+
+        <div class="container">
+
+          <div class="row gy-5">
+
+            <div class="col-lg-4 aos-init aos-animate" data-aos="fade-up" data-aos-delay="100">
+
+              <div class="service-box">
+                <h4>Outsource List</h4>
+                <div class="services-list">
+                  <a href="#" class="active"><i class="bi bi-arrow-right-circle"></i><span>Travel</span></a>
+                  <a href="#"><i class="bi bi-arrow-right-circle"></i><span>Banking</span></a>
+                  <a href="#"><i class="bi bi-arrow-right-circle"></i><span>Financial</span></a>
+                  <a href="#"><i class="bi bi-arrow-right-circle"></i><span>Information Technology</span></a>
+                </div>
+              </div><!-- End Services List -->
+
+              <div class="service-box">
+                <h4>Download Catalog</h4>
+                <div class="download-catalog">
+                  <a href="#"><i class="bi bi-filetype-pdf"></i><span>Catalog PDF</span></a>
+                  <a href="#"><i class="bi bi-file-earmark-word"></i><span>Catalog DOC</span></a>
+                </div>
+              </div><!-- End Services List -->
+
+              <div class="help-box d-flex flex-column justify-content-center align-items-center">
+                <i class="bi bi-headset help-icon"></i>
+                <h4>Have a Question?</h4>
+                <p class="d-flex align-items-center mt-2 mb-0"><i class="bi bi-telephone me-2"></i> <span>+1
+                    646-576-7184</span></p>
+                <p class="d-flex align-items-center mt-2 mb-0"><i class="bi bi-telephone me-2"></i> <span>+91
+                    899-966-0582</span></p>
+                <p class="d-flex align-items-center mt-1 mb-0"><i class="bi bi-envelope me-2"></i> <a
+                    href="mailto:info@thothglobalnetworksolutions.com">info@thothglobalnetworksolutions.com</a></p>
+              </div>
+
+            </div>
+
+            <div class="col-lg-8 ps-lg-5 aos-init aos-animate" data-aos="fade-up" data-aos-delay="200">
+              <img src="./assets/images/aboutus.jpg" alt="" class="img-fluid services-img">
+              <h3>Temporibus et in vero dicta aut eius lidero plastis trand lined voluptas dolorem ut voluptas</h3>
+              <p>
+                Blanditiis voluptate odit ex error ea sed officiis deserunt. Cupiditate non consequatur et doloremque
+                consequuntur. Accusantium labore reprehenderit error temporibus saepe perferendis fuga doloribus vero.
+                Qui omnis quo sit. Dolorem architecto eum et quos deleniti officia qui.
+              </p>
+              <ul>
+                <li><i class="bi bi-check-circle"></i> <span>Aut eum totam accusantium voluptatem.</span></li>
+                <li><i class="bi bi-check-circle"></i> <span>Assumenda et porro nisi nihil nesciunt voluptatibus.</span>
+                </li>
+                <li><i class="bi bi-check-circle"></i> <span>Ullamco laboris nisi ut aliquip ex ea</span></li>
+              </ul>
+              <p>
+                Est reprehenderit voluptatem necessitatibus asperiores neque sed ea illo. Deleniti quam sequi optio iste
+                veniam repellat odit. Aut pariatur itaque nesciunt fuga.
+              </p>
+              <p>
+                Sunt rem odit accusantium omnis perspiciatis officia. Laboriosam aut consequuntur recusandae mollitia
+                doloremque est architecto cupiditate ullam. Quia est ut occaecati fuga. Distinctio ex repellendus
+                eveniet velit sint quia sapiente cumque. Et ipsa perferendis ut nihil. Laboriosam vel voluptates tenetur
+                nostrum. Eaque iusto cupiditate et totam et quia dolorum in. Sunt molestiae ipsum at consequatur vero.
+                Architecto ut pariatur autem ad non cumque nesciunt qui maxime. Sunt eum quia impedit dolore alias
+                explicabo ea.
+              </p>
+            </div>
+
+          </div>
+
+        </div>
+
+      </section>
+      <div class="row m-4 p-4">
+        <div class="col-3 bg-indigo text-center text-light" style="align-content: center;">
+          <h2>About</h2>
+        </div>
+        <div class="col-9">
+          <p>Thoth Global Network Solutions, established in 2021 and headquartered in New York United States,
+            stands at the forefront of innovative digital solutions across multiple industries. Our commitment to
+            bridging boundaries and building solutions has positioned us as a leader in the global marketplace.
+          </p>
+        </div>
+      </div>
+      <div class="row m-4 p-4" id="ourMission">
+        <div class="col-9">
+          <p>At Thoth Global Network Solutions, we strive to deliver cutting-edge, tailored solutions that empower
+            businesses to thrive in an increasingly interconnected world. Our mission is to leverage technology
+            and expertise to transform challenges into opportunities, enabling our clients to achieve
+            unprecedented success.
+          </p>
+        </div>
+        <div class="col-3 bg-magenta text-center text-light" style="align-content: center;">
+          <h2>Our Mission</h2>
+        </div>
+      </div>
+      <div class="row m-4 p-4" id="coreValues">
+        <div class="col-3 bg-mauve text-center text-light" style="align-content: center;">
+          <h2>Core Values</h2>
+        </div>
+        <div class="col-9">
+          <dl>
+            <dt>Innovation:</dt>
+            <dd>We continuously push the boundaries of what's possible, embracing emerging technologies to create
+              novel solutions.</dd>
+            <dt>Excellence:</dt>
+            <dd>We are committed to delivering the highest quality services, exceeding expectations at every turn.
+            </dd>
+            <dt>Integrity:</dt>
+            <dd>We conduct our business with unwavering ethical standards, fostering trust and long-lasting
+              relationships.</dd>
+            <dt>Collaboration:</dt>
+            <dd>We believe in the power of partnership, working closely with our clients to achieve shared goals.
+            </dd>
+            <dt>Adaptability:</dt>
+            <dd>We remain agile in our approach, swiftly adjusting to the ever-changing digital landscape.</dd>
+          </dl>
         </div>
       </div>
     </div>
   </main>
-  <footer>
-    <div class="container">
-      <div class="row p-4 border-bottom border-bottom-light my-2">
-        <div class="col">
-          <h4 class="mb-4">Offices</h4>
-          <p>211 East 43rd Street<br /> 7th Floor<br />205 New York (NY) 10017<br />United States</p>
-          <p>417 - 4th Floor<br />Global Business Hub<br />Near WTC Kharadi<br />Pune (MH) 411014<br />INDIA</p>
-        </div>
-        <div class="col">
-          <h4 class="mb-4">Contact</h4>
-          <ul class="list-unstyled">
-            <li class="my-2"><a href="callto:+16465767184" class="nav-link">+1 646-576-7184 (United States)</a></li>
-            <li class="my-2"><a href="callto:+918999660582" class="nav-link">+91 899-966-0582 (India)</a></li>
-            <li class="my-2"><a href="mailto:info@thothglobalnetworksolutions.com"
-                class="nav-link">info@thothglobalnetworksolutions.com</a></li>
-            <li class="my-4">
-              <ul class="list-inline">
-                <li class="list-inline-item"><a href="" class="m-2"><i class="bi bi-facebook"></i></a></li>
-                <li class="list-inline-item"><a href="" class="m-2"><i class="bi bi-twitter-x"></i></a></li>
-                <li class="list-inline-item"><a href="" class="m-2"><i class="bi bi-linkedin"></i></a></li>
-                <li class="list-inline-item"><a href="" class="m-2"><i class="bi bi-youtube"></i></a></li>
-                <li class="list-inline-item"><a
-                    href="https://www.instagram.com/_t_h_o_t_h_09_?igsh=MTc5a3E3aDEzeHNheQ==" class="m-2"
-                    target="_blank"><i class="bi bi-instagram"></i></a>
-                </li>
-              </ul>
-            </li>
-          </ul>
-        </div>
-        <div class="col">
-          <h4 class="mb-4">Quick Links</h4>
-          <ul class="list-unstyled">
-            <li class="my-2"><a class="nav-link" href="./about.html">About</a></li>
-            <li class="my-2"><a class="nav-link" href="./contact.html">Contact Us</a></li>
-            <li class="my-2"><a class="nav-link" href="./privacy.html">Privacy Policy</a></li>
-            <li class="my-2"><a class="nav-link" href="./refund.html">Refund Policy</a></li>
-            <li class="my-2"><a class="nav-link" href="./terms.html">Terms &amp; Condition</a></li>
-          </ul>
-        </div>
-        <div class="col">
-          <h4 class="mb-4">Services</h4>
-          <div class="row mb-2">
-            <ul class="list-unstyled">
-              <li class="my-2"><a class="nav-link" href="./ourservices.html#digital-marketting">Digital Marketting</a>
-              </li>
-              <li class="my-2"><a class="nav-link" href="./ourservices.html#travel-tourism">Travel &amp; Tourism</a>
-              </li>
-              <li class="my-2"><a class="nav-link" href="./ourservices.html#hospitality">Hospitality</a></li>
-              <li class="my-2"><a class="nav-link" href="./ourservices.html#healthcare">Healthcare</a></li>
-              <li class="my-2"><a class="nav-link" href="./ourservices.html#management">Management</a></li>
-            </ul>
+  <footer class="text-center text-lg-start text-white" style="background-color: #929fba">
+    <div class="container-fluid p-4 pb-0">
+      <section class="">
+        <div class="row">
+          <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
+            <h6 class="text-uppercase mb-4 font-weight-bold">
+              Quick Links
+            </h6>
+            <p>
+              <a href="index.html" class="text-white">Home</a>
+            </p>
+            <p>
+              <a href="about.html" class="text-white">About Us</a>
+            </p>
+            <p>
+              <a href="careers.html" class="text-white">Careers</a>
+            </p>
+            <p>
+              <a href="faq.html" class="text-white">FAQ's</a>
+            </p>
+            <p>
+              <a href="contact.html" class="text-white">Contact Us</a>
+            </p>
+          </div>
+          <hr class="w-100 clearfix d-md-none" />
+          <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
+            <h6 class="text-uppercase mb-4 font-weight-bold">Services</h6>
+            <p>
+              <a href="consulting.html" class="text-white">Consulting</a>
+            </p>
+            <p>
+              <a href="outsourcing.html" class="text-white">Outsourcing</a>
+            </p>
+            <p>
+              <a href="ites.html" class="text-white">IT Enabled Services</a>
+            </p>
+            <p>
+              <a href="outsourcing.html" class="text-white">Travel Outsourcing</a>
+            </p>
+          </div>
+          <hr class="w-100 clearfix d-md-none" />
+          <div class="col-md-5 col-lg-5 col-xl-4 mx-auto mt-3">
+            <h6 class="text-uppercase mb-4 font-weight-bold">Contact</h6>
+            <p>211 East, 43rd Street, 7th Floor, 205 New York (NY) 10017 US</p>
+            <p>417 4th Floor, Global Business Hub, Near WTC Kharadi, Pune(MH) 411014, IN</p>
+            <p>
+              <i class="bi bi-envelope mr-3"></i>
+              <a href="mailto:info@thothglobalnetworksolutions.com">info@thothglobalnetworksolutions.com</a>
+            </p>
+            <p>
+              <i class="bi bi-phone mr-3"></i>
+              <a href="tel:+1 646-576-7184">+1 646-576-7184 (US)</a>&emsp;
+              <i class="bi bi-phone mr-3"></i>
+              <a href="tel:+91 899-966-0582">+91 899-966-0582 (IN)</a>
+            </p>
+          </div>
+          <hr class="w-100 clearfix d-md-none" />
+          <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mt-3">
+            <h6 class="text-uppercase mb-4 font-weight-bold">Follow us</h6>
+            <a class="btn btn-primary btn-floating m-1" style="background-color: #3b5998"
+              href="http://www.facebook.com/thothglobal" role="button" target="_blank"><i
+                class="bi bi-facebook"></i></a>
+            <a class="btn btn-primary btn-floating m-1" style="background-color: #55acee"
+              href="https://x.com/thothglobaltech" role="button" target="_blank"><i class="bi bi-twitter-x"></i></a>
+            <a class="btn btn-primary btn-floating m-1" style="background-color: #dd4b39"
+              href="http://business.google.com" role="button" target="_blank"><i class="bi bi-google"></i></a>
+            <a class="btn btn-primary btn-floating m-1" style="background-color: #ac2bac"
+              href="https://www.instagram.com/th0th_global/" role="button" target="_blank"><i
+                class="bi bi-instagram"></i></a>
+            <a class="btn btn-primary btn-floating m-1" style="background-color: #0082ca"
+              href="https://www.linkedin.com/in/thothglobal" role="button" target="_blank"><i
+                class="bi bi-linkedin"></i></a>
+            <a class="btn btn-primary btn-floating m-1" style="background-color: #fafafa"
+              href="https://github.com/thothglobal" role="button" target="_blank"><i class="bi bi-github"></i></a>
           </div>
         </div>
-      </div>
-      <div class="row">
-        <div class="col">&copy; All rights reserved by ThothGlobalNetworkSolution</div>
-      </div>
+      </section>
+    </div>
+    <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2)">
+      © 2024 Copyright:
+      <a class="text-white" href="https://thothglobalnetworksolution.com/">Thoth Global Network Solutions</a>
     </div>
   </footer>
 </body>

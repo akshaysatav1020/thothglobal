@@ -3,6 +3,13 @@ if ($_POST != null) {
   if (isset($_POST["enquire"])) {
     send_mail($_POST);
   }
+  if (isset($_POST["career"])) {
+    career_application($_POST);
+  }
+}
+
+function career_application($params){
+  
 }
 
 function send_mail($params)

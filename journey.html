@@ -26,7 +26,7 @@
   <meta name="twitter:creator" content="@thothglobalnetworksolution" />
   <meta name="twitter:image" content="https://site-url.net/wp-content/uploads/2023/03/DP-scaled.jpg" />
   <!-- SEO TAGS -->
-  <title>ThothGlobalNetworkSolution | About</title>
+  <title>ThothGlobalNetworkSolution | Our Journey</title>
   <link rel="shortcut icon" href="assets/images/favicon.ico" type="image/x-icon">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
@@ -36,56 +36,121 @@
     integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
     crossorigin="anonymous"></script>
   <style>
-    .container-fluid .card {
-      max-width: 350px;
-      height: 215px;
-      margin: 30px 10px;
-      padding: 20px 15px;
-      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
-      transition: 0.3s ease-in-out;
-    }
-
-    .container-fluid .card:hover {
-      height: 350px;
-    }
-
-    .container-fluid .card .imgContainer {
+    /* The actual timeline (the vertical ruler) */
+    .main-timeline {
       position: relative;
-      width: 250px;
-      height: 215px;
-      top: -50px;
-      left: 20px;
+    }
+
+    /* The actual timeline (the vertical ruler) */
+    .main-timeline::after {
+      content: "";
+      position: absolute;
+      width: 6px;
+      background-color: #939597;
+      top: 0;
+      bottom: 0;
+      left: 50%;
+      margin-left: -3px;
+    }
+
+    /* Container around content */
+    .timeline {
+      position: relative;
+      background-color: inherit;
+      width: 50%;
+    }
+
+    /* The circles on the timeline */
+    .timeline::after {
+      content: "";
+      position: absolute;
+      width: 25px;
+      height: 25px;
+      right: -13px;
+      background-color: #939597;
+      border: 5px solid #f5df4d;
+      top: 15px;
+      border-radius: 50%;
       z-index: 1;
-      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
     }
 
-    .container-fluid .card .imgContainer img {
-      max-width: 100%;
-      border-radius: 4px;
+    /* Place the container to the left */
+    .left {
+      padding: 0px 40px 20px 0px;
+      left: 0;
     }
 
-    .container-fluid .card .content {
-      position: relative;
-      margin-top: -140px;
-      padding: 10px 15px;
-      text-align: center;
-      color: #111;
-      visibility: hidden;
-      opacity: 0;
-      pointer-events: none;
-      transition: 0.3s ease-in-out;
+    /* Place the container to the right */
+    .right {
+      padding: 0px 0px 20px 40px;
+      left: 50%;
     }
 
-    .container-fluid .card:hover .content {
-      visibility: visible;
-      opacity: 1;
-      margin-top: -40px;
-      transition-delay: 0.3s;
+    /* Add arrows to the left container (pointing right) */
+    .left::before {
+      content: " ";
+      position: absolute;
+      top: 18px;
+      z-index: 1;
+      right: 30px;
+      border: medium solid white;
+      border-width: 10px 0 10px 10px;
+      border-color: transparent transparent transparent white;
     }
 
-    @media (max-width: 330px) {
-      .container-fluid .card .imgContainer {
-        left: -2px;
+    /* Add arrows to the right container (pointing left) */
+    .right::before {
+      content: " ";
+      position: absolute;
+      top: 18px;
+      z-index: 1;
+      left: 30px;
+      border: medium solid white;
+      border-width: 10px 10px 10px 0;
+      border-color: transparent white transparent transparent;
+    }
+
+    /* Fix the circle for containers on the right side */
+    .right::after {
+      left: -12px;
+    }
+
+    /* Media queries - Responsive timeline on screens less than 600px wide */
+    @media screen and (max-width: 600px) {
+
+      /* Place the timelime to the left */
+      .main-timeline::after {
+        left: 31px;
+      }
+
+      /* Full-width containers */
+      .timeline {
+        width: 100%;
+        padding-left: 70px;
+        padding-right: 25px;
+      }
+
+      /* Make sure that all arrows are pointing leftwards */
+      .timeline::before {
+        left: 60px;
+        border: medium solid white;
+        border-width: 10px 10px 10px 0;
+        border-color: transparent white transparent transparent;
+      }
+
+      /* Make sure all circles are at the same spot */
+      .left::after,
+      .right::after {
+        left: 18px;
+      }
+
+      .left::before {
+        right: auto;
+      }
+
+      /* Make all right containers behave like the left ones */
+      .right {
+        left: 0%;
       }
     }
   </style>
@@ -229,96 +294,83 @@
     </div>
   </nav>
   <main>
-    <div class="container-fluid">
-      <div class="row pg-banner banner1">
-        <div class="col pg-title">
-          <h1>About Us</h1>
-          <nav aria-label="breadcrumb">
-            <ol class="breadcrumb">
-              <li class="breadcrumb-item"><a href="./">Home</a></li>
-              <li class="breadcrumb-item active"><a href="#">About Us</a></li>
-            </ol>
-          </nav>
-        </div>
+    <div class="container-fluid"></div>
+    <div class="row pg-banner banner1">
+      <div class="col pg-title">
+        <h1>Our Journey</h1>
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="./">Home</a></li>
+            <li class="breadcrumb-item"><a href="#">About</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Our Journey</li>
+          </ol>
+        </nav>
       </div>
     </div>
-    <div class="container-fluid">
-      <div class="row p-4" id="over-view">
-        <div class="col-4">
-          <img class="img-fluid w-75 mx-4 r-1-1" src="./assets/images/bg2.jpg" alt="about-overview">
-        </div>
-        <div class="col-7">
-          <h2>About us</h2>
-          <p>Thoth Global Network Solutions, established in 2021 and headquartered in New York United States,
-            stands at the forefront of innovative digital solutions across multiple industries. Our commitment to
-            bridging boundaries and building solutions has positioned us as a leader in the global marketplace.
-          </p>
+    </div>
+    <div class="container">
+      <div class="row p-2">
+        <div class="col">
           <p>The success of Thoth Global Network Solutions is driven by our exceptional team of professionals.
             While we value every member of our organization, here are a few key individuals who help steer
             our company towards excellence</p>
-          <h2>Our Mission</h2>
-          <p>At Thoth Global Network Solutions, we strive to deliver cutting-edge, tailored solutions that empower
-            businesses to thrive in an increasingly interconnected world. Our mission is to leverage technology
-            and expertise to transform challenges into opportunities, enabling our clients to achieve
-            unprecedented success.</p>
         </div>
       </div>
+
     </div>
-    <div class="container-fluid d-flex align-items-center justify-content-center py-4 bg-light" id="core-values">
-      <div class="row">
-        <div class="col">
-          <h1>Core Values</h1>
+    <div class="container">
+      <section style="background-color: #F0F2F5;">
+        <div class="container py-5">
+          <div class="main-timeline">
+            <div class="timeline left">
+              <div class="card">
+                <div class="card-body p-4">
+                  <h3>2021</h3>
+                  <p class="mb-0">Thoth Global Network Solutions was founded with a clear focus on delivering
+                    cutting-edge digital marketing solutions. Our initial efforts centered on harnessing the power of
+                    digital strategies to help businesses amplify their online presence and achieve their marketing
+                    objectives.</p>
+                </div>
+              </div>
+            </div>
+            <div class="timeline right">
+              <div class="card">
+                <div class="card-body p-4">
+                  <h3>2022</h3>
+                  <p class="mb-0">Building on our early success, we expanded our service offerings to include strategic
+                    management consulting. This year also saw the launch of our innovative healthcare IT solutions,
+                    designed to address the complexities of the healthcare sector and enhance operational efficiency.
+                    Our foray into these new areas underscored our commitment to broadening our expertise and delivering
+                    comprehensive solutions.</p>
+                </div>
+              </div>
+            </div>
+            <div class="timeline left">
+              <div class="card">
+                <div class="card-body p-4">
+                  <h3>2023</h3>
+                  <p class="mb-0">In response to growing market demands, we further diversified our service portfolio by
+                    entering the travel and tourism, and hospitality sectors. This expansion allowed us to bring our
+                    advanced digital solutions to these dynamic industries, providing tailored strategies that address
+                    their unique challenges and opportunities.</p>
+                </div>
+              </div>
+            </div>
+            <div class="timeline right">
+              <div class="card">
+                <div class="card-body p-4">
+                  <h3>2024</h3>
+                  <p class="mb-0">Our continued dedication to excellence and innovation culminated in achieving global
+                    recognition for our integrated network solutions. This milestone represents our successful efforts
+                    to establish a strong international presence and solidify our reputation as a leader in the field of
+                    digital solutions. Our global recognition is a testament to our commitment to delivering exceptional
+                    value and driving progress across diverse industries.</p>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-      </div>
-    </div>
-    <div class="container-fluid d-flex align-items-center justify-content-center position-relative flex-wrap bg-light">
-      <div class="card d-flex position-relative flex-column">
-        <div class='imgContainer d-flex flex-column'>
-          <img src='./assets/images/innovation.jpeg' class="img-fluid p-2">
-          <h2 class="text-center">Innovation</h2>
-        </div>
-        <div class="content">
-          <p>We continuously push the boundaries of what's possible, embracing emerging technologies to create
-            novel solutions.</p>
-        </div>
-      </div>
-      <div class="card d-flex position-relative flex-column">
-        <div class='imgContainer d-flex flex-column'>
-          <img src='./assets/images/excellance.jpeg' class="img-fluid p-2">
-          <h2 class="text-center">Excellence</h2>
-        </div>
-        <div class="content">
-          <p>We are committed to delivering the highest quality services, exceeding expectations at every turn.</p>
-        </div>
-      </div>
-      <div class="card d-flex position-relative flex-column">
-        <div class='imgContainer d-flex flex-column'>
-          <img src='./assets/images/integrity.jpeg' class="img-fluid p-2">
-          <h2 class="text-center">Integrity</h2>
-        </div>
-        <div class="content">
-          <p>We conduct our business with unwavering ethical standards, fostering trust and long-lasting
-            relationships.</p>
-        </div>
-      </div>
-      <div class="card d-flex position-relative flex-column">
-        <div class='imgContainer d-flex flex-column'>
-          <img src='./assets/images/collaboration.jpeg' class="img-fluid p-2">
-          <h2 class="text-center">Collaboration</h2>
-        </div>
-        <div class="content">
-          <p>We believe in the power of partnership, working closely with our clients to achieve shared goals.</p>
-        </div>
-      </div>
-      <div class="card d-flex position-relative flex-column">
-        <div class='imgContainer d-flex flex-column'>
-          <img src='./assets/images/adaptability.png' class="img-fluid p-2">
-          <h2 class="text-center">Adaptability</h2>
-        </div>
-        <div class="content">
-          <p>We remain agile in our approach, swiftly adjusting to the ever-changing digital landscape.</p>
-        </div>
-      </div>
+      </section>
     </div>
   </main>
   <footer class="text-center text-lg-start text-white" style="background-color: #929fba">
